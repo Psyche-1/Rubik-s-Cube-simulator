@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<title>3d</title>
+	<link href="3d.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<div class="all-container">
+		<div class="control">
+			<fieldset class="themes">
+				<input type="radio" name="theme" value="dark" id="dark" checked /><label for="dark">Dark</label>
+				<input type="radio" name="theme" value="neon" id="neon" /><label for="neon">Neon</label>
+				<input type="radio" name="theme" value="light" id="neon" /><label for="light">Light</label>
+			</fieldset>
+			<fieldset class="entering-types">
+				<input type="radio" name="entering-type" value="enter" id="enter" checked>
+				<label for="enter">Enter cube</label>
+				<input type="radio" name="entering-type" value="type-rotation" id="type-rotation">
+				<label for="type-rotation">Type rotate</label>
+				<input type="radio" name="entering-type" value="rotate-immediately" id="rotate-immediately">
+				<label for="rotate-immediately">Rotate immediately</label>
+			</fieldset>
+			<div class="colors">
+				<button class="yellow color ">yellow</button>
+				<button class="orange color">orange</button>
+				<button class="blue color">blue</button>
+				<button class="red color">red</button>
+				<button class="white color">white</button>
+				<button class="green color">green</button>
+			</div>
+			<div class="typing-rotate">
+				<input type="text" class="turn-line">
+				<div class="change-rotating-and-braket">
+					<button>*2</button>
+					<button>'</button>
+					<button>(</button>
+					<button>)</button>
+				</div>
+				<div class="do-rotation">
+					<button>←</button>
+					<button>Enter</button>
+					<button>Clear</button>
+				</div>
+				<div class="choose-rotation">
+					<button>U</button>
+					<button>F</button>
+					<button>R</button>
+					<button>D</button>
+					<button>B</button>
+					<button>L</button>
+					<button>E</button>
+					<button>S</button>
+					<button>M</button>
+				</div>
+				<div class="using-clipboard">
+					<button>Cut</button>
+					<button>Copy</button>
+					<button>Paste</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="cube">
+				<table class="side front"><!-- blue --><!-- front_side -->
+					<tr>
+						<td>
+							<div class="fragment" data-color="blue">0</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="blue">1</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="blue">2</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="fragment" data-color="blue">3</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="blue">4</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="blue">5</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="fragment" data-color="blue">6</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="blue">7</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="blue">8</div>
+						</td>
+					</tr>
+				</table>
+
+				<table class="side back"> <!-- green --><!-- back_side -->
+					<tr>
+						<td>
+							<div class="fragment" data-color="green">0</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="green">1</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="green">2</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="fragment" data-color="green">3</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="green">4</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="green">5</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="fragment" data-color="green">6</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="green">7</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="green">8</div>
+						</td>
+					</tr>
+				</table>
+				<!--  -->
+				<table class="side right"> <!-- red --><!-- right_side -->
+					<tr>
+						<td>
+							<div class="fragment" data-color="red">0</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="red">1</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="red">2</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="fragment" data-color="red">3</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="red">4</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="red">5</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="fragment" data-color="red">6</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="red">7</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="red">8</div>
+						</td>
+					</tr>
+				</table>
+
+				<table class="side left"><!-- orange --><!-- left_side -->
+					<tr>
+						<td>
+							<div class="fragment" data-color="orange">0</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="orange">1</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="orange">2</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="fragment" data-color="orange">3</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="orange">4</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="orange">5</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="fragment" data-color="orange">6</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="orange">7</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="orange">8</div>
+						</td>
+					</tr>
+				</table>
+
+				<table class="side top"><!-- yellow --><!-- top -->
+					<tr>
+						<td>
+							<div class="fragment" data-color="yellow">0</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="yellow">1</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="yellow">2</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="fragment" data-color="yellow">3</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="yellow">4</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="yellow">5</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="fragment" data-color="yellow">6</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="yellow">7</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="yellow">8</div>
+						</td>
+					</tr>
+				</table>
+
+				<table class="side bottom"><!-- white --><!-- bottom -->
+					<tr>
+						<td>
+							<div class="fragment" data-color="white">0</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="white">1</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="white">2</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="fragment" data-color="white">3</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="white">4</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="white">5</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="fragment" data-color="white">6</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="white">7</div>
+						</td>
+						<td>
+							<div class="fragment" data-color="white">8</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	<script type="module" src="3d.js"></script>
+</body>
+
+</html>
