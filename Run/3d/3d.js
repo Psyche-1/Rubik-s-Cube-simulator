@@ -16,7 +16,7 @@
 // backface-visibility: hidden;  // hidden other side
 let theme = "dark";
 let chosenColor = "";
-let chosenRotationCube = "enter";
+let chosenRotationCube = "type-enter";
 
 const startCubeList = [
   ["y", "y", "y", "y", "y", "y", "y", "y", "y"], // 0	//top
@@ -121,7 +121,7 @@ function changeFragmentColorByTheme() {
 }
 
 function chooseColor(event) {
-  if (chosenRotationCube === "enter") {
+  if (chosenRotationCube === "type-enter") {
     chosenColor = event.target.textContent;
     // console.log(chosenColor);
   }
@@ -139,7 +139,7 @@ function chooseEnteringType(event) {
 }
 
 function changeFragmentColor() {
-  if (chosenRotationCube !== "enter") {
+  if (chosenRotationCube !== "type-enter") {
     return;
   }
   if (!chosenColor) {
@@ -487,23 +487,45 @@ function middle(cube) {
 const turnLine = document.querySelector(".turn-line");
 
 // typing-rotate buttons
-// const x2 = document.querySelector("#x2");
-// const stroke = document.querySelector("#stroke");
+const x2 = document.querySelector("#x2");
+const stroke = document.querySelector("#stroke");
 // const bra = document.querySelector("#bra");
 // const ket = document.querySelector("#ket");
 
-// x2.addEventListener("click", x2Turn);
-// stroke.addEventListener("click", strokeTurn);
+x2.addEventListener("click", x2Turn);
+stroke.addEventListener("click", strokeTurn);
 // bra.addEventListener("click", braTurn);
 // ket.addEventListener("click", ketTurn);
 
-// function x2Turn() {
-//   turnLine.value = turnLine.value.slice(0, turnLine.value.length - 1) + "2 ";
-// }
+let lastSymbol;
 
-// function strokeTurn() {
-//   turnLine.value = turnLine.value.slice(0, turnLine.value.length - 1) + "' ";
-// }
+function x2Turn() {
+  lastSymbol = turnLine.value[turnLine.value.length - 2];
+  if (lastSymbol === "2" || lastSymbol === "'") {
+    return;
+  }
+  turnLine.value = turnLine.value.slice(0, turnLine.value.length - 1) + "2 ";
+  if (chosenRotationCube === "rotate-immediately") {
+    "UFRDBLESM".includes(lastSymbol);
+
+    one_rotation(cubeList, lastSymbol);
+    changeCubeByTurn();
+  }
+}
+
+function strokeTurn() {
+  lastSymbol = turnLine.value[turnLine.value.length - 2];
+  if (lastSymbol === "2" || lastSymbol === "'") {
+    return;
+  }
+  turnLine.value = turnLine.value.slice(0, turnLine.value.length - 1) + "' ";
+  if (chosenRotationCube === "rotate-immediately") {
+    "UFRDBLESM".includes(lastSymbol);
+
+    one_rotation(cubeList, lastSymbol, "2");
+    changeCubeByTurn();
+  }
+}
 
 // function braTurn() {
 //   turnLine.value += ") ";
@@ -522,10 +544,29 @@ enter.addEventListener("click", doEnter);
 clear.addEventListener("click", doClear);
 
 function doBackspace() {
-  turnLine.value = turnLine.value.slice(0, turnLine.value.length - 2);
+  turnLine.value =
+    turnLine.value
+      .trim()
+      .slice(0, turnLine.value.trim().length - 1)
+      .trim() + " ";
 }
 
-function doEnter() {}
+let turns;
+
+function doEnter() {
+  if (chosenRotationCube !== "type-rotation") {
+    return;
+  }
+
+  turns = turnLine.value.trim().split(" ");
+  turns = turns.filter((turn) => turn !== "");
+
+  for (const turn of turns) {
+    one_rotation(cubeList, ...turn.split(""));
+  }
+
+  changeCubeByTurn();
+}
 
 function doClear() {
   turnLine.value = "";
