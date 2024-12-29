@@ -104,24 +104,24 @@ button {
 	}
 }
 
-#refresh {
+.big-btn {
 	color: #808080;
 	background-color: #000;
 	border: none;
 	width: 100%;
 	height: 40px;
-}
 
-#refresh:hover {
-	color: #000;
-	background-color: #808080;
-	border: none;
-}
+	&:hover {
+		color: #000;
+		background-color: #808080;
+		border: none;
+	}
 
-#refresh:active {
-	color: #808080;
-	background-color: #000;
-	border: none;
+	&:active {
+		color: #808080;
+		background-color: #000;
+		border: none;
+	}
 }
 
 .change-rotating-and-braket {

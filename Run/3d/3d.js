@@ -769,6 +769,29 @@ function doPaste() {
 // function rotateDown() {}
 // function rotateRight() {}
 
+const save = document.querySelector("#save");
+const load = document.querySelector("#load");
+
+save.addEventListener("click", doSave);
+load.addEventListener("click", doLoad);
+
+function doSave() {
+  localStorage.setItem("cube-list", JSON.stringify(cubeList));
+}
+
+function doLoad() {
+  const savedCubeList = JSON.parse(localStorage.getItem("cube-list"));
+  console.log(savedCubeList);
+
+  cubeList = [];
+
+  for (let i = 0; i < savedCubeList.length; i++) {
+    cubeList.push([...savedCubeList[i]]);
+  }
+
+  changeCubeByTurn();
+}
+
 const refresh = document.querySelector("#refresh");
 
 refresh.addEventListener("click", doRefresh);
