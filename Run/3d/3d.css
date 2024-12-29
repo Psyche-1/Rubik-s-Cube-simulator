@@ -70,18 +70,38 @@ button {
 	color: #808080;
 	background-color: #000;
 	border: none;
+
+	&:hover {
+		color: #000;
+		background-color: #808080;
+		border: none;
+	}
+
+	&:active {
+		color: #808080;
+		background-color: #000;
+		border: none;
+	}
 }
 
-.typing-rotate button:hover {
-	color: #000;
-	background-color: #808080;
-	border: none;
+.arrows {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
-.typing-rotate button:active {
+.arrows button {
 	color: #808080;
 	background-color: #000;
 	border: none;
+	width: 60px;
+	height: 60px;
+
+	&:hover {
+		color: #000;
+		background-color: #808080;
+		border: none;
+	}
 }
 
 #refresh {

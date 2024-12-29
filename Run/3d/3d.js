@@ -45,6 +45,15 @@ const colorDict = {
   g: "green",
 };
 
+const colorBackwardDict = {
+  yellow: "y",
+  orange: "o",
+  blue: "b",
+  red: "r",
+  white: "w",
+  green: "g",
+};
+
 const themes = {
   dark: {
     yellow: "#B7B400",
@@ -151,6 +160,66 @@ function changeFragmentColor() {
 
   this.style = `background-color: ${themes[theme][this.dataset.color]};
   color: ${themes[theme][this.dataset.color]};`;
+
+  cubeList[2][0] = colorBackwardDict[fragments[0].dataset.color];
+  cubeList[2][1] = colorBackwardDict[fragments[1].dataset.color];
+  cubeList[2][2] = colorBackwardDict[fragments[2].dataset.color];
+  cubeList[2][3] = colorBackwardDict[fragments[3].dataset.color];
+  cubeList[2][4] = colorBackwardDict[fragments[4].dataset.color];
+  cubeList[2][5] = colorBackwardDict[fragments[5].dataset.color];
+  cubeList[2][6] = colorBackwardDict[fragments[6].dataset.color];
+  cubeList[2][7] = colorBackwardDict[fragments[7].dataset.color];
+  cubeList[2][8] = colorBackwardDict[fragments[8].dataset.color];
+
+  cubeList[5][0] = colorBackwardDict[fragments[9].dataset.color];
+  cubeList[5][1] = colorBackwardDict[fragments[10].dataset.color];
+  cubeList[5][2] = colorBackwardDict[fragments[11].dataset.color];
+  cubeList[5][3] = colorBackwardDict[fragments[12].dataset.color];
+  cubeList[5][4] = colorBackwardDict[fragments[13].dataset.color];
+  cubeList[5][5] = colorBackwardDict[fragments[14].dataset.color];
+  cubeList[5][6] = colorBackwardDict[fragments[15].dataset.color];
+  cubeList[5][7] = colorBackwardDict[fragments[16].dataset.color];
+  cubeList[5][8] = colorBackwardDict[fragments[17].dataset.color];
+
+  cubeList[3][0] = colorBackwardDict[fragments[18].dataset.color];
+  cubeList[3][1] = colorBackwardDict[fragments[19].dataset.color];
+  cubeList[3][2] = colorBackwardDict[fragments[20].dataset.color];
+  cubeList[3][3] = colorBackwardDict[fragments[21].dataset.color];
+  cubeList[3][4] = colorBackwardDict[fragments[22].dataset.color];
+  cubeList[3][5] = colorBackwardDict[fragments[23].dataset.color];
+  cubeList[3][6] = colorBackwardDict[fragments[24].dataset.color];
+  cubeList[3][7] = colorBackwardDict[fragments[25].dataset.color];
+  cubeList[3][8] = colorBackwardDict[fragments[26].dataset.color];
+
+  cubeList[1][0] = colorBackwardDict[fragments[27].dataset.color];
+  cubeList[1][1] = colorBackwardDict[fragments[28].dataset.color];
+  cubeList[1][2] = colorBackwardDict[fragments[29].dataset.color];
+  cubeList[1][3] = colorBackwardDict[fragments[30].dataset.color];
+  cubeList[1][4] = colorBackwardDict[fragments[31].dataset.color];
+  cubeList[1][5] = colorBackwardDict[fragments[32].dataset.color];
+  cubeList[1][6] = colorBackwardDict[fragments[33].dataset.color];
+  cubeList[1][7] = colorBackwardDict[fragments[34].dataset.color];
+  cubeList[1][8] = colorBackwardDict[fragments[35].dataset.color];
+
+  cubeList[0][0] = colorBackwardDict[fragments[36].dataset.color];
+  cubeList[0][1] = colorBackwardDict[fragments[37].dataset.color];
+  cubeList[0][2] = colorBackwardDict[fragments[38].dataset.color];
+  cubeList[0][3] = colorBackwardDict[fragments[39].dataset.color];
+  cubeList[0][4] = colorBackwardDict[fragments[40].dataset.color];
+  cubeList[0][5] = colorBackwardDict[fragments[41].dataset.color];
+  cubeList[0][6] = colorBackwardDict[fragments[42].dataset.color];
+  cubeList[0][7] = colorBackwardDict[fragments[43].dataset.color];
+  cubeList[0][8] = colorBackwardDict[fragments[44].dataset.color];
+
+  cubeList[4][0] = colorBackwardDict[fragments[45].dataset.color];
+  cubeList[4][1] = colorBackwardDict[fragments[46].dataset.color];
+  cubeList[4][2] = colorBackwardDict[fragments[47].dataset.color];
+  cubeList[4][3] = colorBackwardDict[fragments[48].dataset.color];
+  cubeList[4][4] = colorBackwardDict[fragments[49].dataset.color];
+  cubeList[4][5] = colorBackwardDict[fragments[50].dataset.color];
+  cubeList[4][6] = colorBackwardDict[fragments[51].dataset.color];
+  cubeList[4][7] = colorBackwardDict[fragments[52].dataset.color];
+  cubeList[4][8] = colorBackwardDict[fragments[53].dataset.color];
 }
 
 function createBijection() {
@@ -676,6 +745,29 @@ function doPaste() {
     .readText()
     .then((clipText) => (turnLine.value += clipText));
 }
+
+// const arrowUp = document.querySelector("#arrow-up");
+// const arrowLeft = document.querySelector("#arrow-left");
+// const arrowDown = document.querySelector("#arrow-down");
+// const arrowRight = document.querySelector("#arrow-right");
+
+// arrowUp.addEventListener("click", rotateUp);
+// arrowLeft.addEventListener("click", rotateLeft);
+// arrowDown.addEventListener("click", rotateDown);
+// arrowRight.addEventListener("click", rotateRight);
+
+// function rotateUp() {
+//   document.dispatchEvent(
+//     new KeyboardEvent("keydown", {
+//       key: "up",
+//       char: 37,
+//       ctrlKey: false,
+//     })
+//   );
+// }
+// function rotateLeft() {}
+// function rotateDown() {}
+// function rotateRight() {}
 
 const refresh = document.querySelector("#refresh");
 
